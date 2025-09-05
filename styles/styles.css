@@ -39,7 +39,7 @@ select {
     --border-color: #969696;
     --body-color: #F1F1F1;
     --border-stroke: 0.05rem solid var(--border-color);
-    --spacing-logo: 0.75rem;
+    --spacing-logo: 0.3rem;
     --max-width-content: 47.5rem;
     --spacing-words: 0.2rem;
 
@@ -71,7 +71,7 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: var(--max-width-content);
-    margin: 1.25rem auto 0rem;
+    margin: 0.7rem auto 1rem;
 
 }
 
@@ -81,22 +81,25 @@ body {
 }
 
 .logo img {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
 
     @media screen and (max-width: 450px) {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 1.5rem;
     }
 }
 
 .login_icon img {
-    width: 3.5rem;
-    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+
 
     @media screen and (max-width: 450px) {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
     }
 }
 
@@ -296,11 +299,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .button_period_select img {
     position: absolute;
+    width: 0.75rem;
     left: 20%;
     /* отступ от правого края */
     top: 50%;
     transform: translateY(-50%);
-    /* z-index: 1; */
     pointer-events: none;
 
     /* чтобы клики проходили сквозь изображение к кнопке */
@@ -364,10 +367,10 @@ input[type="number"]::-webkit-inner-spin-button {
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     display: block;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     position: relative;
     z-index: 1;
 }
@@ -687,6 +690,10 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-right: var(--spacing-words);
 }
 
+#trend_image img {
+    width: 0.85rem;
+}
+
 .row_trend_container {
     display: flex;
     justify-content: center;
@@ -727,4 +734,232 @@ input[type="number"]::-webkit-inner-spin-button {
     /* Делаем скроллбар тонким */
     scrollbar-color: #ccc transparent;
     /* Задаем цвет ползунка и прозрачный фон */
+}
+
+
+/* --- Стили для автоматического скрытия скроллбара --- */
+
+/* Для браузеров WebKit (Chrome, Safari, Edge) */
+.history_table_row_container::-webkit-scrollbar {
+    width: 8px;
+    /* Ширина скроллбара */
+}
+
+.history_table_row_container::-webkit-scrollbar-track {
+    background: transparent;
+    /* Фон дорожки делаем прозрачным */
+}
+
+.history_table_row_container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* Цвет ползунка */
+    border-radius: 4px;
+    /* Скругляем углы ползунка */
+    visibility: hidden;
+    /* По умолчанию ползунок невидимый */
+}
+
+.history_table_row_container:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    /* Показываем ползунок при наведении на таблицу */
+}
+
+/* Для Firefox */
+.history_table_row_container {
+    scrollbar-width: thin;
+    /* Делаем скроллбар тонким */
+    scrollbar-color: #ccc transparent;
+    /* Задаем цвет ползунка и прозрачный фон */
+}
+
+/* Modal Styles */
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(249, 249, 249, 1);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: var(--border-stroke);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+    min-width: 62%;
+
+    @media screen and (max-width: 450px) {
+        width: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    @media screen and (max-width: 450px) {
+        font-size: 1.1rem;
+    }
+}
+
+.close_button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #969696;
+    cursor: pointer;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    align-items: center;
+
+    @media screen and (max-width: 450px) {
+        width: 50%;
+    }
+}
+
+.avatar {
+    width: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media screen and (max-width: 450px) {
+        width: 8.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+
+.logout_button {
+    margin-top: 0.5rem;
+    padding: 0.75rem 0;
+    background-color: var(--blue-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.logout_button:hover {
+    background-color: #0071eA;
+}
+
+.form-avatar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    /* margin-top: 1rem; */
+}
+
+/* Profile Form Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 19rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    border: var(--border-stroke);
+    font-size: 1rem;
+
+    @media screen and (max-width: 450px) {
+        font-size: 0.75rem;
+        width: 14rem;
+    }
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.weight {
+    display: flex;
+    align-items: left;
+    width: 12rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    text-align: center;
+
+    @media screen and (max-width: 450px) {
+        font-size: 1rem;
+        /* padding: 0.1rem; */
+    }
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+
+    @media screen and (max-width: 450px) {
+        font-size: 0.75rem;
+    }
+}
+
+.radio-group-row {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2rem;
+}
+
+.radio-group label,
+.radio-group-row label {
+    margin-left: 0.3rem;
+    font-weight: 400;
+}
+
+.radio-button {
+    margin-left: 1rem;
+
+    @media screen and (max-width: 450px) {
+        margin-left: 0.2rem;
+    }
 }

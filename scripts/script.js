@@ -74,3 +74,25 @@ const placeholderText = () => {
 // Вызываем функцию при загрузке страницы и при изменении размера окна
 window.addEventListener('DOMContentLoaded', placeholderText);
 window.addEventListener('resize', placeholderText);
+
+// Modal window logic
+const loginIcon = document.querySelector('.login_icon');
+const profileModal = document.getElementById('profileModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const logoutModalButton = document.querySelector('.logout_button');
+const closeModalButton = document.querySelector('.close_button');
+
+const openModal = () => {
+    profileModal.classList.remove('hidden');
+    modalOverlay.classList.remove('hidden');
+};
+
+const closeModal = () => {
+    profileModal.classList.add('hidden');
+    modalOverlay.classList.add('hidden');
+};
+
+loginIcon.addEventListener('click', openModal);
+closeModalButton.addEventListener('click', closeModal);
+logoutModalButton.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
