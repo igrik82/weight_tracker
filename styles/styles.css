@@ -772,7 +772,6 @@ input[type="number"]::-webkit-inner-spin-button {
     /* Задаем цвет ползунка и прозрачный фон */
 }
 
-/* Modal Styles */
 .hidden {
     display: none;
 }
