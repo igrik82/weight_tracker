@@ -798,7 +798,8 @@ input[type="number"]::-webkit-inner-spin-button {
     border: var(--border-stroke);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 11;
-    min-width: 62%;
+    width: 62%;
+    max-width: 36rem;
 
     @media screen and (max-width: 450px) {
         width: 95%;
