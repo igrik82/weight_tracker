@@ -1,85 +1,77 @@
 <!doctype html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weight Tracker</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="site-install/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="site-install/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="site-install/favicon-16x16.png" />
+    <link rel="manifest" href="site-install/site.webmanifest" />
     <link rel="stylesheet" href="styles/reset_styles.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/app.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="app_container">
-      <div class="login_container">
-        <div class="top_panel logo_container">
-          <div class="logo">
-            <img src="images/logo_d.svg" />
-          </div>
-          <header>
-            <h1 class="logo_text">Weight Tracker</h1>
-          </header>
+        <div class="login_container">
+            <div class="top_panel logo_container">
+                <div class="logo">
+                    <img src="images/logo_d.svg" />
+                </div>
+                <header>
+                    <h1 class="logo_text">Weight Tracker</h1>
+                </header>
+            </div>
+            <form class="credentials_container">
+                <div class="form-row credentials">
+                    <input type="email" id="email" name="email" class="form-input input-credentials"
+                        placeholder="Email" />
+                    <input type="password" id="password" name="password" class="form-input input-credentials"
+                        placeholder="Пароль" />
+                    <button class="logout_button login_button" type="submit">
+                        Войти
+                    </button>
+                    <a class="register_link" href="#" id="registerLink">Регистрация</a>
+                </div>
+            </form>
         </div>
-        <form class="credentials_container">
-          <div class="form-row credentials">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input input-credentials"
-              placeholder="Email"
-            />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-input input-credentials"
-              placeholder="Пароль"
-            />
-            <button class="logout_button login_button" type="submit">
-              Войти
-            </button>
-            <a class="register_link" href="#" id="registerLink">Регистрация</a>
-          </div>
-        </form>
-      </div>
     </div>
     <div id="modalOverlay" class="overlay hidden"></div>
     <div id="registerModal" class="modal hidden">
-      <div class="modal_content">
-        <span class="close_button" id="closeModal">&times;</span>
-        <h2>Сайт в процессе разработки</h2>
-        <p>Регистрация будет доступна в ближайшее время.</p>
-      </div>
+        <div class="modal_content">
+            <span class="close_button" id="closeModal">&times;</span>
+            <h2>Сайт в процессе разработки</h2>
+            <p>Регистрация будет доступна в ближайшее время.</p>
+        </div>
     </div>
 
     <script>
-      const registerLink = document.getElementById("registerLink");
-      const registerModal = document.getElementById("registerModal");
-      const modalOverlay = document.getElementById("modalOverlay");
-      const closeModalButton = document.getElementById("closeModal");
+        const registerLink = document.getElementById("registerLink");
+        const registerModal = document.getElementById("registerModal");
+        const modalOverlay = document.getElementById("modalOverlay");
+        const closeModalButton = document.getElementById("closeModal");
 
-      const openModal = () => {
-        registerModal.classList.remove("hidden");
-        modalOverlay.classList.remove("hidden");
-      };
+        const openModal = () => {
+            registerModal.classList.remove("hidden");
+            modalOverlay.classList.remove("hidden");
+        };
 
-      const closeModal = () => {
-        registerModal.classList.add("hidden");
-        modalOverlay.classList.add("hidden");
-      };
+        const closeModal = () => {
+            registerModal.classList.add("hidden");
+            modalOverlay.classList.add("hidden");
+        };
 
-      registerLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
-      });
-      closeModalButton.addEventListener("click", closeModal);
-      modalOverlay.addEventListener("click", closeModal);
+        registerLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        });
+        closeModalButton.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", closeModal);
     </script>
-  </body>
+</body>
+
 </html>
