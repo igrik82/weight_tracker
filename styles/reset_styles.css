@@ -1,0 +1,32 @@
+/* Убираем внутренние отступы и margin у всех элементов */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Убираем стандартные стили для списков */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Наследование шрифтов для форм */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Убираем анимации для людей, которые их не хотят */
+/* @media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} */
