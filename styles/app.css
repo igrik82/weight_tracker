@@ -798,9 +798,9 @@ h2 {
     width: 40%;
     align-items: center;
 
-    @media screen and (max-width: 450px) {
-        width: 50%;
-    }
+    /* @media screen and (max-width: 450px) { */
+    /*     width: 30%; */
+    /* } */
 }
 
 .avatar {
@@ -809,7 +809,12 @@ h2 {
     object-fit: cover;
 
     @media screen and (max-width: 450px) {
-        width: 8.5rem;
+        width: 85%;
+        margin-left: 1rem;
+    }
+
+    @media screen and (min-width: 450px) and (max-width: 750px) {
+        width: 90%;
         margin-left: 0.5rem;
     }
 }
@@ -861,6 +866,11 @@ h2 {
     @media screen and (max-width: 450px) {
         font-size: 0.75rem;
         width: 14rem;
+    }
+
+    @media screen and (min-width: 450px) and (max-width: 750px) {
+        font-size: 0.75rem;
+        width: 15rem;
     }
 }
 
@@ -931,6 +941,10 @@ h2 {
     font-size: 0.9rem;
 
     @media screen and (max-width: 450px) {
+        font-size: 0.75rem;
+    }
+
+    @media screen and (max-width: 750px) {
         font-size: 0.75rem;
     }
 }
