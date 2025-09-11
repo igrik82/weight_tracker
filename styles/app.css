@@ -54,6 +54,9 @@
 .app_container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background-color: var(--background-color);
 }
 
 .login_container {
@@ -61,7 +64,6 @@
     flex-direction: column;
     justify-content: center;
     width: 45%;
-    margin-top: 30%;
     align-items: center;
     border: var(--border-stroke);
     border-radius: 1rem;
