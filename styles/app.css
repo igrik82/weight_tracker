@@ -219,6 +219,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 2.5rem; */
 }
 
+#weight_setting {
+    width: 1.5rem;
+    margin-left: -2rem;
+
+    @media screen and (max-width: 450px) {
+        width: 1rem;
+        margin-left: -1.5rem;
+    }
+}
+
 /* input[type="number"] { */
 /*     -moz-appearance: textfield; */
 /* } */
