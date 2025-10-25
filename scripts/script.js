@@ -89,6 +89,7 @@ const openModal = () => {
 
 const closeModal = () => {
     profileModal.classList.add('hidden');
+    settingsModal.classList.add('hidden');
     modalOverlay.classList.add('hidden');
 };
 
@@ -96,3 +97,16 @@ loginIcon.addEventListener('click', openModal);
 closeModalButton.addEventListener('click', closeModal);
 logoutModalButton.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
+
+// Settings modal logic
+const settingsIcon = document.getElementById('weight_setting');
+const settingsModal = document.getElementById('settingsModal');
+const closeSettingsModalButton = settingsModal.querySelector('.close_button');
+
+const openSettingsModal = () => {
+    settingsModal.classList.remove('hidden');
+    modalOverlay.classList.remove('hidden');
+};
+
+settingsIcon.addEventListener('click', openSettingsModal);
+closeSettingsModalButton.addEventListener('click', closeModal);
