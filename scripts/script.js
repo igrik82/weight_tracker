@@ -78,14 +78,21 @@ window.addEventListener('resize', placeholderText);
 // Modal window logic
 const loginIcon = document.querySelector('.login_icon');
 const profileModal = document.getElementById('profileModal');
+const settingsModal = document.getElementById('settingsModal');
 const modalOverlay = document.getElementById('modalOverlay');
 const logoutModalButton = document.querySelector('.logout_button');
-const closeModalButton = document.querySelector('.close_button');
+const closeButtons = document.querySelectorAll('.close_button');
+const settingsIcon = document.getElementById('weight_setting');
 
-const openModal = () => {
+const openProfileModal = () => {
     profileModal.classList.remove('hidden');
     modalOverlay.classList.remove('hidden');
-};
+}
+
+const openSettingsModal = () => {
+    settingsModal.classList.remove('hidden');
+    modalOverlay.classList.remove('hidden');
+}
 
 const closeModal = () => {
     profileModal.classList.add('hidden');
@@ -93,20 +100,12 @@ const closeModal = () => {
     modalOverlay.classList.add('hidden');
 };
 
-loginIcon.addEventListener('click', openModal);
-closeModalButton.addEventListener('click', closeModal);
+loginIcon.addEventListener('click', openProfileModal);
+settingsIcon.addEventListener('click', openSettingsModal);
+
+closeButtons.forEach(button => {
+    button.addEventListener('click', closeModal);
+});
+
 logoutModalButton.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
-
-// Settings modal logic
-const settingsIcon = document.getElementById('weight_setting');
-const settingsModal = document.getElementById('settingsModal');
-const closeSettingsModalButton = settingsModal.querySelector('.close_button');
-
-const openSettingsModal = () => {
-    settingsModal.classList.remove('hidden');
-    modalOverlay.classList.remove('hidden');
-};
-
-settingsIcon.addEventListener('click', openSettingsModal);
-closeSettingsModalButton.addEventListener('click', closeModal);
