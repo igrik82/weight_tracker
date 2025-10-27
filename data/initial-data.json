@@ -1,0 +1,968 @@
+[
+  {
+    "date": "2025-04-18",
+    "weight": 96.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-19",
+    "weight": 96.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-20",
+    "weight": 95.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-21",
+    "weight": 95.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-22",
+    "weight": 95.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-23",
+    "weight": 95.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-24",
+    "weight": 95.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-25",
+    "weight": 95.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-26",
+    "weight": 95.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-27",
+    "weight": 95.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-28",
+    "weight": 95.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-29",
+    "weight": 94.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-04-30",
+    "weight": 94.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-01",
+    "weight": 94.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-02",
+    "weight": 94.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-03",
+    "weight": 94.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-04",
+    "weight": 93.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-05",
+    "weight": 93.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-06",
+    "weight": 93.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-07",
+    "weight": 93.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-08",
+    "weight": 93.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-09",
+    "weight": 93.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-10",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-11",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-12",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-13",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-14",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-15",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-16",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-17",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-18",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-19",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-20",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-21",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-22",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-23",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-24",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-25",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-26",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-27",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-28",
+    "weight": 93.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-29",
+    "weight": 93.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-30",
+    "weight": 93.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-05-31",
+    "weight": 93.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-01",
+    "weight": 93.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-02",
+    "weight": 93.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-03",
+    "weight": 93.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-04",
+    "weight": 93.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-05",
+    "weight": 93.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-06",
+    "weight": 93.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-07",
+    "weight": 93.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-08",
+    "weight": 93.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-09",
+    "weight": 93.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-10",
+    "weight": 93.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-11",
+    "weight": 93.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-12",
+    "weight": 93.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-13",
+    "weight": 93.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-14",
+    "weight": 93.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-15",
+    "weight": 93.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-16",
+    "weight": 93.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-17",
+    "weight": 93.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-18",
+    "weight": 93.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-19",
+    "weight": 93.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-20",
+    "weight": 93.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-21",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-22",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-23",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-24",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-25",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-26",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-27",
+    "weight": 91.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-28",
+    "weight": 91.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-29",
+    "weight": 91.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-06-30",
+    "weight": 92.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-01",
+    "weight": 92.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-02",
+    "weight": 92.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-03",
+    "weight": 92.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-04",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-05",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-06",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-07",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-08",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-09",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-10",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-11",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-12",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-13",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-14",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-15",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-16",
+    "weight": 92.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-17",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-18",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-19",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-20",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-21",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-22",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-23",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-24",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-25",
+    "weight": 92.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-26",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-27",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-28",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-29",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-30",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-07-31",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-01",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-02",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-03",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-04",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-05",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-06",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-07",
+    "weight": 92.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-08",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-09",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-10",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-11",
+    "weight": 92.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-12",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-13",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-14",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-15",
+    "weight": 93.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-16",
+    "weight": 92.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-17",
+    "weight": 92.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-18",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-19",
+    "weight": 92.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-20",
+    "weight": 92.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-21",
+    "weight": 92.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-22",
+    "weight": 91.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-23",
+    "weight": 91.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-24",
+    "weight": 91.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-25",
+    "weight": 91.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-26",
+    "weight": 91.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-27",
+    "weight": 91.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-28",
+    "weight": 91.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-29",
+    "weight": 91.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-30",
+    "weight": 90.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-08-31",
+    "weight": 90.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-01",
+    "weight": 90.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-02",
+    "weight": 90.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-03",
+    "weight": 90.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-04",
+    "weight": 90.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-05",
+    "weight": 90.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-06",
+    "weight": 89.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-07",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-08",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-09",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-10",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-11",
+    "weight": 89.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-12",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-13",
+    "weight": 89.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-14",
+    "weight": 89.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-15",
+    "weight": 89.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-16",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-17",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-18",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-19",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-20",
+    "weight": 89.24,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-21",
+    "weight": 89.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-22",
+    "weight": 89.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-23",
+    "weight": 89.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-24",
+    "weight": 89.34,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-25",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-26",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-27",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-28",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-29",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-09-30",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-01",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-02",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-03",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-04",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-05",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-06",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-07",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-08",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-09",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-10",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-11",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-12",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-13",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-14",
+    "weight": 89.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-15",
+    "weight": 89.84,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-16",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-17",
+    "weight": 89.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-18",
+    "weight": 89.64,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-19",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-20",
+    "weight": 89.54,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-21",
+    "weight": 89.44,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-22",
+    "weight": 89.14,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-23",
+    "weight": 89.04,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-24",
+    "weight": 88.94,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-25",
+    "weight": 88.74,
+    "clothesApplied": true
+  },
+  {
+    "date": "2025-10-26",
+    "weight": 88.64,
+    "clothesApplied": true
+  },
+  {
+    "clothesApplied": true,
+    "date": "2025-10-27",
+    "weight": 88.44,
+    "clothesApplied": true
+  }
+]

@@ -235,6 +235,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 }
 
+#weight_setting.gear-icon-active {
+    filter: invert(36%) sepia(98%) saturate(2000%) hue-rotate(198deg) brightness(100%) contrast(100%); /* Blue color */
+}
+
 /* input[type="number"] { */
 /*     -moz-appearance: textfield; */
 /* } */
@@ -662,6 +666,21 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     height: 100%;
 }
+
+.row_weight_container .tshirt-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    margin-left: -0.8rem;
+}
+
+.tshirt-icon-placeholder {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    margin-left: -0.8rem;
+}
+
 
 #row_weight {
     margin-right: var(--spacing-words);

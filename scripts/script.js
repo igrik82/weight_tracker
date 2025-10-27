@@ -90,6 +90,12 @@ const openProfileModal = () => {
 }
 
 const openSettingsModal = () => {
+    const clothesWeight = localStorage.getItem('clothesWeight');
+    if (clothesWeight) {
+        document.getElementById('clothes_weight').value = clothesWeight;
+    } else {
+        document.getElementById('clothes_weight').value = '';
+    }
     settingsModal.classList.remove('hidden');
     modalOverlay.classList.remove('hidden');
 }
@@ -118,17 +124,28 @@ modalOverlay.addEventListener('click', closeModal);
  * Получает данные о весе из localStorage.
  * @returns {Array} - Массив объектов с данными о весе (например, [{date: '2025-10-27', weight: 85.5}]).
  */
-const getWeightData = () => {
+const getWeightData = async () => {
     const data = localStorage.getItem('weightData');
-    if (!data) {
-        return [];
+    if (data) {
+        try {
+            // localStorage хранит данные в виде строк, поэтому мы используем JSON.parse для преобразования строки обратно в массив.
+            return JSON.parse(data);
+        } catch (error) {
+            console.error('Error parsing weightData from localStorage:', error);
+            // Если данные повреждены, загружаем начальные данные
+        }
     }
+
     try {
-        // localStorage хранит данные в виде строк, поэтому мы используем JSON.parse для преобразования строки обратно в массив.
-        return JSON.parse(data);
+        const response = await fetch('data/initial-data.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const initialData = await response.json();
+        saveWeightData(initialData);
+        return initialData;
     } catch (error) {
-        console.error('Error parsing weightData from localStorage:', error);
-        // Если данные повреждены, возвращаем пустой массив
+        console.error('Error fetching initial data:', error);
         return [];
     }
 };
@@ -140,6 +157,32 @@ const getWeightData = () => {
 const saveWeightData = (data) => {
     // Перед сохранением мы преобразуем массив в строку с помощью JSON.stringify.
     localStorage.setItem('weightData', JSON.stringify(data));
+};
+
+let allWeightData = [];
+let currentPeriod = 'month'; // week, month, year, all
+
+const filterDataByPeriod = (data, period) => {
+    const now = new Date();
+    let startDate = new Date();
+
+    switch (period) {
+        case 'week':
+            startDate.setDate(now.getDate() - 7);
+            break;
+        case 'month':
+            startDate.setMonth(now.getMonth() - 1);
+            break;
+        case 'year':
+            startDate.setFullYear(now.getFullYear() - 1);
+            break;
+        case 'all':
+            return data;
+        default:
+            return data;
+    }
+
+    return data.filter(item => new Date(item.date) >= startDate);
 };
 
 
@@ -183,12 +226,15 @@ const renderHistory = (data) => {
         const trendImage = trend > 0 ? 'images/weight_up.svg' : 'images/weight_down.svg';
         const trendAbs = Math.abs(trend);
 
+        const clothesIcon = item.clothesApplied ? `<img src="images/tshirt.svg" class="tshirt-icon" alt="Clothes weight">` : '<div class="tshirt-icon-placeholder"></div>';
+
         // Создаем HTML-элемент для новой строки таблицы.
         const row = document.createElement('div');
         row.classList.add('history_table_row');
         row.innerHTML = `
             <div class="history_table_cell">
                 <div class="row_weight_container">
+                    ${clothesIcon}
                     <div id="row_weight">${item.weight.toFixed(2)}</div>
                     <div>кг</div>
                 </div>
@@ -217,16 +263,36 @@ const renderHistory = (data) => {
     });
 };
 
+const updateCurrentWeight = (allData, periodData) => {
+    const sortedAllData = allData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const lastWeight = sortedAllData.length > 0 ? sortedAllData[0].weight : 0;
+
+    const sortedPeriodData = periodData.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const firstWeightOfPeriod = sortedPeriodData.length > 0 ? sortedPeriodData[0].weight : 0;
+
+    const weightChange = lastWeight - firstWeightOfPeriod;
+
+    document.getElementById('text_current_weight').textContent = lastWeight.toFixed(2);
+    document.getElementById('text_weight_changes').textContent = Math.abs(weightChange).toFixed(1);
+
+    const trendImage = document.getElementById('img_weight_changes');
+    if (weightChange > 0) {
+        trendImage.src = 'images/weight_up.svg';
+    } else {
+        trendImage.src = 'images/weight_down.svg';
+    }
+};
+
 
 // --- Обработчики событий ---
 
 // Обработчик отправки формы для добавления нового веса.
-document.querySelector('.add_weight_container').addEventListener('submit', (event) => {
+document.querySelector('.add_weight_container').addEventListener('submit', async (event) => {
     // Предотвращаем стандартное поведение формы (перезагрузку страницы).
     event.preventDefault();
 
     const date = dateInput.value;
-    const weight = parseFloat(weightInput.value);
+    let weight = parseFloat(weightInput.value);
 
     // Простая валидация: проверяем, что дата и вес введены корректно.
     if (!date || isNaN(weight)) {
@@ -234,8 +300,15 @@ document.querySelector('.add_weight_container').addEventListener('submit', (even
         return;
     }
 
-    const newEntry = { date, weight };
-    const data = getWeightData();
+    const clothesWeight = parseFloat(localStorage.getItem('clothesWeight')) || 0;
+    const newEntry = { date, weight, clothesApplied: false };
+
+    if (clothesWeight > 0) {
+        newEntry.weight -= clothesWeight;
+        newEntry.clothesApplied = true;
+    }
+
+    let data = await getWeightData();
 
     // Проверяем, существует ли уже запись для этой даты.
     // Если да, обновляем ее. Если нет, добавляем новую.
@@ -248,8 +321,8 @@ document.querySelector('.add_weight_container').addEventListener('submit', (even
 
     // Сохраняем обновленные данные и перерисовываем интерфейс.
     saveWeightData(data);
-    renderChart(data);
-    renderHistory(data);
+    allWeightData = await getWeightData();
+    updateDisplay();
 
     // Очищаем поле ввода веса.
     weightInput.value = '';
@@ -257,31 +330,64 @@ document.querySelector('.add_weight_container').addEventListener('submit', (even
 
 // Обработчик для удаления записей из истории.
 // Используем делегирование событий, чтобы не навешивать обработчик на каждую кнопку удаления.
-document.querySelector('.history_table_row_container').addEventListener('click', (event) => {
+document.querySelector('.history_table_row_container').addEventListener('click', async (event) => {
     // Проверяем, был ли клик по кнопке удаления.
     if (event.target.closest('.row_delete_container')) {
         const dateToDelete = event.target.closest('.row_delete_container').dataset.date;
         // Запрашиваем подтверждение у пользователя.
         if (confirm('Вы уверены, что хотите удалить эту запись?')) {
-            let data = getWeightData();
+            let data = await getWeightData();
             // Фильтруем массив, удаляя запись с выбранной датой.
             data = data.filter(item => item.date !== dateToDelete);
             // Сохраняем изменения и обновляем интерфейс.
             saveWeightData(data);
-            renderChart(data);
-            renderHistory(data);
+            allWeightData = await getWeightData();
+            updateDisplay();
         }
     }
 });
 
 
-// --- Начальная загрузка ---
+document.getElementById('save_settings_button').addEventListener('click', async () => {
+    const clothesWeight = parseFloat(document.getElementById('clothes_weight').value);
+    if (!isNaN(clothesWeight)) {
+        localStorage.setItem('clothesWeight', clothesWeight);
+    } else {
+        localStorage.removeItem('clothesWeight');
+    }
+    closeModal();
+    allWeightData = await getWeightData();
+    updateDisplay();
+});
 
-// Этот код выполнится, когда весь HTML-документ будет загружен и готов.
-document.addEventListener('DOMContentLoaded', () => {
-    // Получаем данные из localStorage.
-    const data = getWeightData();
-    // Отрисовываем график и историю на основе сохраненных данных.
-    renderChart(data);
-    renderHistory(data);
+
+// --- Начальная загрузка и обработка периодов ---
+
+const updateDisplay = () => {
+    const filteredData = filterDataByPeriod(allWeightData, currentPeriod);
+    renderChart(filteredData);
+    renderHistory(allWeightData); // History should show all data
+    updateCurrentWeight(allWeightData, filteredData);
+
+    const clothesWeight = parseFloat(localStorage.getItem('clothesWeight')) || 0;
+    if (clothesWeight > 0) {
+        document.getElementById('weight_setting').classList.add('gear-icon-active');
+    } else {
+        document.getElementById('weight_setting').classList.remove('gear-icon-active');
+    }
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+    allWeightData = await getWeightData();
+    updateDisplay();
+});
+
+document.getElementById('myDropdown').addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') {
+        currentPeriod = event.target.dataset.period;
+        document.querySelector('.month_button').textContent = event.target.textContent;
+        updateDisplay();
+        //  Скрываем дропдаун
+        document.getElementById("myDropdown").classList.remove("show");
+    }
 });
