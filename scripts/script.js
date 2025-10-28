@@ -85,6 +85,7 @@ const closeButtons = document.querySelectorAll('.close_button');
 const settingsIcon = document.getElementById('weight_setting');
 
 const openProfileModal = () => {
+    loadProfileData();
     profileModal.classList.remove('hidden');
     modalOverlay.classList.remove('hidden');
 }
@@ -93,9 +94,9 @@ const openSettingsModal = () => {
     const clothesWeight = localStorage.getItem('clothesWeight');
     if (clothesWeight) {
         document.getElementById('clothes_weight').value = clothesWeight;
-    } else {
-        document.getElementById('clothes_weight').value = '';
     }
+    const ignoreClothesWeight = localStorage.getItem('ignoreClothesWeight') === 'true';
+    document.getElementById('ignore_clothes_weight_checkbox').checked = ignoreClothesWeight;
     settingsModal.classList.remove('hidden');
     modalOverlay.classList.remove('hidden');
 }
@@ -157,6 +158,29 @@ const getWeightData = async () => {
 const saveWeightData = (data) => {
     // Перед сохранением мы преобразуем массив в строку с помощью JSON.stringify.
     localStorage.setItem('weightData', JSON.stringify(data));
+};
+
+const saveProfileData = () => {
+    const profile = {
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        height: document.getElementById('height').value,
+        birth_date: document.getElementById('birth_date').value,
+        muscle: document.querySelector('input[name="muscle"]:checked').value,
+        target_weight: document.getElementById('target_weight').value
+    };
+    localStorage.setItem('userProfile', JSON.stringify(profile));
+};
+
+const loadProfileData = () => {
+    const profileData = localStorage.getItem('userProfile');
+    if (profileData) {
+        const profile = JSON.parse(profileData);
+        document.querySelector(`input[name="gender"][value="${profile.gender}"]`).checked = true;
+        document.getElementById('height').value = profile.height;
+        document.getElementById('birth_date').value = profile.birth_date;
+        document.querySelector(`input[name="muscle"][value="${profile.muscle}"]`).checked = true;
+        document.getElementById('target_weight').value = profile.target_weight;
+    }
 };
 
 let allWeightData = [];
@@ -283,6 +307,52 @@ const updateCurrentWeight = (allData, periodData) => {
     }
 };
 
+const calculateAndDisplayBMI = () => {
+    const profileData = localStorage.getItem('userProfile');
+    const lastWeight = allWeightData.length > 0 ? allWeightData.sort((a, b) => new Date(b.date) - new Date(a.date))[0].weight : 0;
+
+    if (profileData && lastWeight > 0) {
+        const profile = JSON.parse(profileData);
+        const height = parseFloat(profile.height);
+
+        if (height > 0) {
+            const heightInMeters = height / 100;
+            const bmi = lastWeight / (heightInMeters * heightInMeters);
+
+            document.getElementById('text_bmi_value').textContent = bmi.toFixed(1);
+
+            const bmiStatus = document.querySelector('.bmi_status p');
+            const bmiTriangle = document.getElementById('bmi_progress_bar_triangle');
+
+            let statusText = '';
+            let triangleColor = '';
+            let trianglePosition = 0;
+
+            if (bmi < 18.5) {
+                statusText = 'Недостаточный вес';
+                triangleColor = '#3D85D8';
+                trianglePosition = (bmi / 18.5) * 25;
+            } else if (bmi >= 18.5 && bmi < 25) {
+                statusText = 'Норма';
+                triangleColor = '#17E22E';
+                trianglePosition = 25 + ((bmi - 18.5) / (25 - 18.5)) * 25;
+            } else if (bmi >= 25 && bmi < 30) {
+                statusText = 'Избыточный вес';
+                triangleColor = '#FFE100';
+                trianglePosition = 50 + ((bmi - 25) / (30 - 25)) * 25;
+            } else {
+                statusText = 'Ожирение';
+                triangleColor = '#E75550';
+                trianglePosition = 75 + ((bmi - 30) / (40 - 30)) * 25; // Assuming max BMI of 40 for the scale
+            }
+
+            bmiStatus.textContent = statusText;
+            bmiTriangle.style.borderBottomColor = triangleColor;
+            bmiTriangle.style.marginLeft = `${Math.min(100, Math.max(0, trianglePosition))}%`;
+        }
+    }
+};
+
 
 // --- Обработчики событий ---
 
@@ -301,9 +371,10 @@ document.querySelector('.add_weight_container').addEventListener('submit', async
     }
 
     const clothesWeight = parseFloat(localStorage.getItem('clothesWeight')) || 0;
+    const ignoreClothesWeight = localStorage.getItem('ignoreClothesWeight') === 'true';
     const newEntry = { date, weight, clothesApplied: false };
 
-    if (clothesWeight > 0) {
+    if (clothesWeight > 0 && !ignoreClothesWeight) {
         newEntry.weight -= clothesWeight;
         newEntry.clothesApplied = true;
     }
@@ -350,14 +421,26 @@ document.querySelector('.history_table_row_container').addEventListener('click',
 
 document.getElementById('save_settings_button').addEventListener('click', async () => {
     const clothesWeight = parseFloat(document.getElementById('clothes_weight').value);
+    const ignoreClothesWeight = document.getElementById('ignore_clothes_weight_checkbox').checked;
+
     if (!isNaN(clothesWeight)) {
         localStorage.setItem('clothesWeight', clothesWeight);
     } else {
         localStorage.removeItem('clothesWeight');
     }
+    localStorage.setItem('ignoreClothesWeight', ignoreClothesWeight);
+
     closeModal();
     allWeightData = await getWeightData();
     updateDisplay();
+});
+
+
+document.querySelector('#profileModal .form-container').addEventListener('submit', (event) => {
+    event.preventDefault();
+    saveProfileData();
+    calculateAndDisplayBMI();
+    closeModal();
 });
 
 
@@ -368,9 +451,11 @@ const updateDisplay = () => {
     renderChart(filteredData);
     renderHistory(allWeightData); // History should show all data
     updateCurrentWeight(allWeightData, filteredData);
+    calculateAndDisplayBMI();
 
     const clothesWeight = parseFloat(localStorage.getItem('clothesWeight')) || 0;
-    if (clothesWeight > 0) {
+    const ignoreClothesWeight = localStorage.getItem('ignoreClothesWeight') === 'true';
+    if (clothesWeight > 0 && !ignoreClothesWeight) {
         document.getElementById('weight_setting').classList.add('gear-icon-active');
     } else {
         document.getElementById('weight_setting').classList.remove('gear-icon-active');
