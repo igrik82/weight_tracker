@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: weight-tracker-app
+    restart: always
+    environment:
+      # Указываем URI для подключения к контейнеру mongo
+      # "mongo" - это имя сервиса из файла docker-compose.db.yml
+      # "weight_tracker" - это имя базы данных, которое будет создано
+      - MONGO_URI=mongodb://admin:password@mongo:27017/weight_tracker?authSource=admin
+      # Указываем порт, который будет слушать контейнер
+      - PORT=3000 
+    networks:
+      - database-net
+    # Если вы хотите пробросить порт напрямую для отладки (не рекомендуется в production за Traefik)
+    # ports:
+    #   - "3000:3000"
+
+networks:
+  database-net:
+    external: true

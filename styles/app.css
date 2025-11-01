@@ -196,6 +196,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-top: var(--border-stroke);
     border-bottom: var(--border-stroke);
     align-items: center;
+    padding-right: 1rem; /* Добавляем отступ справа */
 
     @media screen and (max-width: 450px) {
         min-width: 45%;
@@ -209,7 +210,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     @media screen and (max-width: 450px) {
         font-size: 1rem;
-        max-width: 80%;
+        max-width: 85%;
     }
 }
 
@@ -236,7 +237,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #weight_setting.gear-icon-active {
-    filter: invert(36%) sepia(98%) saturate(2000%) hue-rotate(198deg) brightness(100%) contrast(100%); /* Blue color */
+    filter: invert(36%) sepia(98%) saturate(2000%) hue-rotate(198deg) brightness(100%) contrast(100%);
+    /* Blue color */
 }
 
 /* input[type="number"] { */
@@ -470,9 +472,8 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 0.5rem;
     background: linear-gradient(to right,
             #3D85D8 0%,
-            #17E22E 25%,
-            #12E558 50%,
-            #FFE100 75%,
+            #17E22E 45%,
+            #FFE100 57%,
             #E75550 100%);
     border-radius: 1rem;
     position: relative;
@@ -573,6 +574,10 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 60%;
 }
 
+#progress_bar_cover.progress-bar-overweight {
+    background: #E75550; /* Red color */
+}
+
 .chart-container {
     display: flex;
     justify-content: space-between;
@@ -627,6 +632,10 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 3rem;
     position: relative;
     /* Для позиционирования псевдо-элемента */
+
+    @media screen and (max-width: 450px) {
+        font-size: 0.8rem;
+    }
 }
 
 .history_table_row::after {
@@ -649,6 +658,10 @@ input[type="number"]::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 450px) {
+        flex-basis: 75%;
+    }
 }
 
 .history_table_title {
@@ -657,28 +670,22 @@ input[type="number"]::-webkit-inner-spin-button {
     border: var(--border-stroke);
 }
 
-.row_weight_container,
-.row_trend_container,
-.row_date_container,
-.row_delete_container {
+.row_weight_container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    gap: 0.3rem; /* Добавляем промежуток */
 }
 
 .row_weight_container .tshirt-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 0.5rem;
-    margin-left: -0.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
 }
 
 .tshirt-icon-placeholder {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 0.5rem;
-    margin-left: -0.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
 }
 
 
@@ -688,13 +695,22 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #trend_image img {
     width: 0.85rem;
+
+    @media screen and (max-width: 450px) {
+        width: 0.6rem;
+    }
+}
+
+#tred_text {
+    min-width: 2.5em; /* Adjust as needed */
+    text-align: right;
 }
 
 .row_trend_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-words);
+    gap: 0.1rem; /* Уменьшаем промежуток */
 }
 
 /* --- Стили для автоматического скрытия скроллбара --- */
@@ -819,6 +835,11 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 }
 
+#periodModal {
+    width: auto;
+    max-width: 25rem;
+}
+
 .modal_content {
     display: flex;
     flex-direction: column;
@@ -850,10 +871,31 @@ h2 {
     justify-content: center;
     width: 40%;
     align-items: center;
+    position: relative;
+    /* Needed for spinner positioning */
 
     /* @media screen and (max-width: 450px) { */
     /*     width: 30%; */
     /* } */
+}
+
+.avatar-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--blue-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .avatar {
@@ -871,6 +913,8 @@ h2 {
         margin-left: 0.5rem;
     }
 }
+
+
 
 
 .logout_button {
@@ -928,10 +972,23 @@ form-cont-settings {
     }
 }
 
+.form-container.form-container--period {
+    width: auto; /* Убираем фиксированную ширину */
+}
+
 .form-row {
     display: flex;
     align-items: center;
     justify-content: left;
+}
+
+.form-row > input[type="checkbox"]#ignore_clothes_weight_checkbox {
+    width: auto; /* Убираем растягивание чекбокса */
+    margin-left: 0.5rem; /* Убираем отступ слева */
+}
+
+.form-row > label[for="ignore_clothes_weight_checkbox"] {
+    margin-left: 0.5rem; /* Добавляем небольшой отступ для текста */
 }
 
 .credentials {

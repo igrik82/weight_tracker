@@ -39,7 +39,7 @@
           </header>
         </div>
         <div class="login_icon">
-          <img src="images/koten.png" />
+          <img src="%%AVATAR_URL%%" alt="User Avatar" />
         </div>
       </div>
       <form class="add_weight_container">
@@ -55,11 +55,12 @@
             id="weight"
             placeholder="Добавить текущий вес"
           />
-          <img
-            id="weight_setting"
-            src="images/gear-solid-full.svg"
-            alt="Settings"
-          />
+          <div class="settings-icon-container">
+                                <img
+                                  id="weight_setting"
+                                  src="images/gear-solid-full.svg"
+                                  alt="Settings"
+                                />          </div>
         </div>
         <button class="save_button" type="submit">Сохранить</button>
       </form>
@@ -73,16 +74,16 @@
             <a href="#" data-period="week">Неделя</a>
             <a href="#" data-period="month">Месяц</a>
             <a href="#" data-period="year">Год</a>
-            <a href="#" data-period="all">Весь период</a>
+            <a href="#" data-period="custom">Период</a>
           </div>
         </div>
         <div class="text_weight_container">
           <div class="chainged_weight">
             <img id="img_weight_changes" src="images/weight_down.svg" />
-            <p id="text_weight_changes">3,2</p>
+            <p id="text_weight_changes"></p>
           </div>
           <div class="current_weight_container">
-            <p id="text_current_weight">94,90</p>
+            <p id="text_current_weight"></p>
             <p id="text_current_weight_units">кг</p>
           </div>
         </div>
@@ -92,7 +93,7 @@
               <p>BMI -</p>
             </div>
             <div class="bmi_value">
-              <p id="text_bmi_value">25,3</p>
+              <p id="text_bmi_value"></p>
             </div>
           </div>
           <div class="bmi_progress_bar_container">
@@ -100,18 +101,18 @@
             <div id="bmi_progress_bar_triangle"></div>
           </div>
           <div class="bmi_status">
-            <p>Норма</p>
+            <p></p>
           </div>
         </div>
       </div>
       <div class="progress_bar_container">
         <div class="progress_bar_text_container">
           <div class="progress_bar_weight_container">
-            <div id="weight_before">99,85</div>
+            <div id="weight_before"></div>
             <div>кг</div>
           </div>
           <div class="progress_bar_date_container">
-            <div id="date_before">18.04.25</div>
+            <div id="date_before"></div>
           </div>
         </div>
         <div id="progress_bar">
@@ -119,11 +120,11 @@
         </div>
         <div class="progress_bar_text_container">
           <div class="progress_bar_weight_container">
-            <div id="weight_point">84,00</div>
+            <div id="weight_point"></div>
             <div>кг</div>
           </div>
           <div class="progress_bar_date_container">
-            <div id="date_before">21.12.25</div>
+            <div id="date_point"></div>
           </div>
         </div>
       </div>
@@ -139,240 +140,6 @@
             <div class="history_table_cell">Удалить</div>
           </div>
           <div class="history_table_row_container">
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_down.svg" loading="lazy" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" loading="lazy" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_up.svg" loading="lazy" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_down.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_up.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_down.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_up.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_down.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_up.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
-            <div class="history_table_row">
-              <div class="history_table_cell">
-                <div class="row_weight_container">
-                  <div id="row_weight">95,40</div>
-                  <div>кг</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_trend_container">
-                  <div id="trend_image">
-                    <img src="images/weight_down.svg" />
-                  </div>
-                  <div id="tred_text">3,2</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_date_container">
-                  <div id="row_date">21.12.2025</div>
-                </div>
-              </div>
-              <div class="history_table_cell">
-                <div class="row_delete_container">
-                  <img src="images/delete.svg" />
-                </div>
-              </div>
-            </div>
           </div>
           <!-- Additional rows will be added here by script.js -->
         </div>
@@ -396,13 +163,13 @@
               />
             </div>
             <div class="form-row">
-              <label for="ignore_clothes_weight_checkbox" class="form-label">Не учитывать вес одежды</label>
               <input
                 type="checkbox"
                 id="ignore_clothes_weight_checkbox"
                 name="ignore_clothes_weight_checkbox"
                 class="form-input"
               />
+              <label for="ignore_clothes_weight_checkbox" class="form-label">Не учитывать вес одежды</label>
             </div>
             <button
               id="save_settings_button"
@@ -497,8 +264,26 @@
               <button class="logout_button" type="submit">Сохранить</button>
             </form>
             <div class="avatar-container">
-              <img src="images/koten.png" alt="User Avatar" class="avatar" />
+              <img src="%%AVATAR_URL%%" alt="User Avatar" class="avatar" />
+              <div class="avatar-spinner hidden"></div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div id="periodModal" class="modal hidden">
+        <div class="modal_content">
+          <span class="close_button">&times;</span>
+          <h2>Выберите период</h2>
+          <div class="form-container form-container--period">
+            <div class="form-row">
+              <label for="start_date" class="form-label">Начало:</label>
+              <input type="date" id="start_date" name="start_date" class="form-input" />
+            </div>
+            <div class="form-row">
+              <label for="end_date" class="form-label">Конец:</label>
+              <input type="date" id="end_date" name="end_date" class="form-input" />
+            </div>
+            <button id="apply_period_button" class="logout_button" type="submit">Применить</button>
           </div>
         </div>
       </div>
