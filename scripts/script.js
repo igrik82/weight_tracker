@@ -40,15 +40,26 @@ let weightChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [],
-        datasets: [{
-            label: 'Вес (кг)',
-            data: [],
-            // borderColor: '#4361ee',
-            backgroundColor: 'rgba(67, 97, 238, 0.1)',
-            borderWidth: 2,
-            fill: true,
-            tension: 0.3
-        }]
+        datasets: [
+            {
+                label: 'Фактический вес',
+                data: [],
+                backgroundColor: 'rgba(67, 97, 238, 0.1)',
+                borderColor: '#4361ee',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3
+            },
+            {
+                label: 'Рекомендуемый темп',
+                data: [],
+                borderColor: 'rgba(255, 99, 132, 0.5)',
+                borderWidth: 2,
+                borderDash: [5, 5],
+                fill: false,
+                tension: 0.3
+            }
+        ]
     },
     options: {
         responsive: true,
@@ -323,9 +334,25 @@ const renderChart = (data) => {
     // Создаем массив значений (веса) для оси Y.
     const weights = sortedData.map(item => item.weight);
 
+    // --- Расчет идеальной линии тренда ---
+    const trendData = [];
+    if (sortedData.length > 1) {
+        const firstDataPoint = sortedData[0];
+        let idealWeight = firstDataPoint.weight;
+        trendData.push(idealWeight); // Начальная точка
+
+        for (let i = 1; i < sortedData.length; i++) {
+            const daysBetween = (new Date(sortedData[i].date) - new Date(firstDataPoint.date)) / (1000 * 60 * 60 * 24);
+            const weeksPassed = daysBetween / 7;
+            idealWeight = firstDataPoint.weight * Math.pow((1 - 0.0075), weeksPassed);
+            trendData.push(idealWeight);
+        }
+    }
+
     // Обновляем данные графика и перерисовываем его.
     weightChart.data.labels = labels;
     weightChart.data.datasets[0].data = weights;
+    weightChart.data.datasets[1].data = trendData;
     weightChart.update();
 };
 
